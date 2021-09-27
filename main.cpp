@@ -47,7 +47,7 @@ int main() {
   return 0;
 }
 
-void cacheFriendly() {
+void theExample() {
   /* Vector allocates objects one after another, and
    * I think most methods of vector is iterating through neighbour elements,
    * so I think that vector is an example of cache-friendly code */
@@ -64,13 +64,21 @@ void cacheFriendly() {
   }
 }
 
+// We can use extern "C" to call C functions, write Variables, & include headers
+extern "C" {
+#include<stdio.h>    // Include C Header
+int n;               // Declare a Variable
+void func(int,int);  // Declare a function (function prototype)
+}
+
 // We can use const keyword to show that we will not modify the pointer or reference passed in arguments.
-void constant(const string& theString, const string* theSecondString) {
+void theExample(const string& theString, const string* theSecondString) {
   // We can use const to make sure that some object will remain the same.
   const int ten = 10;
   // ten = 9; will force errors here.
 }
-// Also, we can use const at member functions.
-// In const member func.-s is not allowed to change value of attributes of its class.
-// But only const func.-s can be called by const object.
-// So if we want to call some func. with const obj. we forced to make this func. const.
+/* Also, we can use const at member functions.
+ * In const member func.-s is not allowed to change value of attributes of its class.
+ * But only const func.-s can be called by const object.
+ * So if we want to call some func. with const obj. we forced to make this func. const. */
+
